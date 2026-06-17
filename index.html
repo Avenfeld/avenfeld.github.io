@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matt Case</title>
+  <meta name="description" content="Executive producer and creative leader in games. I think interactive storytelling is the most underperformed promise in entertainment." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F4F1EA;
+      --fg: #1A1A18;
+      --muted: #6B6860;
+      --accent: #2C4A3E;
+      --rule: #D6D1C4;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--sans);
+      font-size: 18px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    nav.scrolled { border-bottom-color: var(--rule); }
+    .nav-name {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--fg); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7rem 3rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .hero-kicker {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      margin-bottom: 2rem;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-primary {
+      background: var(--fg);
+      color: var(--bg);
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-secondary {
+      border: 1.5px solid var(--fg);
+      color: var(--fg);
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* SCROLL INDICATOR */
+    .scroll-cue {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+    .scroll-cue::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--muted);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 3rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+
+    /* BELIEVE */
+    .believe h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 2rem;
+    }
+    .believe p {
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+    .believe p:last-of-type { margin-bottom: 0; }
+    .pull-quote {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--fg);
+      border-left: 3px solid var(--accent);
+      padding-left: 1.5rem;
+      margin: 2.5rem 0;
+      line-height: 1.5;
+    }
+
+    /* WORK */
+    .work-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .work-item {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .work-item:last-child { border-bottom: 1px solid var(--rule); }
+    .work-meta {
+      padding-top: 0.2rem;
+    }
+    .work-company {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+    .work-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--fg);
+      line-height: 1.3;
+    }
+    .work-years {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .work-desc {
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .work-desc strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+    .contact p {
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 3rem;
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .work-item { grid-template-columns: 1fr; gap: 0.75rem; }
+      footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="#" class="nav-name">Matt Case</a>
+    <ul class="nav-links">
+      <li><a href="#believe">Thinking</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-kicker">Executive Producer &middot; Games &amp; Interactive</p>
+    <h1>The story engine in your brain runs all the time. Games have never actually used it.</h1>
+    <p class="hero-sub">I'm a senior games producer and creative leader with twenty-plus years shipping ambitious projects. I think interactive storytelling is the most underperformed promise in entertainment, and I think AI just made it solvable.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+      <a href="#believe" class="btn btn-secondary">What I believe</a>
+    </div>
+    <p class="scroll-cue">Keep reading</p>
+  </div>
+
+  <hr class="section-rule" />
+
+  <!-- BELIEVE -->
+  <section class="believe" id="believe">
+    <p class="section-label">What I think</p>
+    <h2>Games made a promise nobody has cashed yet.</h2>
+
+    <p>Your brain has always been a story engine. It takes raw experience and converts it into meaning, constantly, whether you ask it to or not. That's the mechanism every storyteller has ever tapped into: novels, film, theater. You fill in what's not on the page. You convince yourself you felt something that wasn't explicitly there. The story engine does the work.</p>
+
+    <div class="pull-quote">
+      "As a player, to be an active participant in the story being told." That's the promise. Forty years on, it's still open.
+    </div>
+
+    <p>The industry has solved almost everything around that promise. Graphics are photoreal. Worlds are enormous. Distribution reaches billions. But the promise itself? There are no truly great video game characters yet. And I'll stand behind that provocation.</p>
+
+    <p>Characters are the critical material of story. Agency is what makes them real. Hamlet chooses, and the choices cost him something, and you feel it because you're occupying the same moral space. In games, player agency and character agency eat each other. Give the player full control and the character becomes a puppet. Author the character's choices and the player becomes a spectator. Most games bridge that gap by leaning on the story engine: players fill in enough meaning that it feels like more than it is.</p>
+
+    <p>The industry has a name for the symptom: ludonarrative dissonance. Naming it isn't solving it.</p>
+
+    <p>There are actually two problems on this path. The first is awareness: building games that track what you do, understand what it meant, and use it to produce meaningfully different outcomes. Players have been asking for persistence more than branching all along. They remember the betrayal. They don't remember the number of systems running underneath.</p>
+
+    <p>The second, longer problem is shared agency: characters that hold their own life and will inside the same space as the player. That's the Hamlet test. Nobody has built that yet.</p>
+
+    <p>AI is the first tool that makes both problems tractable. Almost everyone is pointing it at production efficiency. I'm interested in something harder.</p>
+
+    <div class="pull-quote">
+      What happens when a story can finally talk back?
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- WORK -->
+  <section id="work">
+    <p class="section-label">The work</p>
+    <div class="work-grid">
+
+      <div class="work-item">
+        <div class="work-meta">
+          <p class="work-company">Bungie</p>
+          <p class="work-title">Director of Narrative Production</p>
+          <p class="work-years">Destiny franchise</p>
+        </div>
+        <p class="work-desc">
+          Rebuilt the narrative organization after launch. Led 100-plus people across audio, writing, and cinematics through 4 releases. <strong>Metacritic moved from 63 to 86.</strong> A learning machine that got better at pulling players into the story with every year.
+        </p>
+      </div>
+
+      <div class="work-item">
+        <div class="work-meta">
+          <p class="work-company">Warner Bros. / HBO</p>
+          <p class="work-title">Executive Producer</p>
+          <p class="work-years">Westworld Interactive</p>
+        </div>
+        <p class="work-desc">
+          The same problem at a different scale: translate a nonlinear, morally complex world into an interactive experience worth an Emmy. <strong>Emmy-nominated.</strong> The lesson was the same as Destiny: the story has to hold when the player starts pulling on it.
+        </p>
+      </div>
+
+      <div class="work-item">
+        <div class="work-meta">
+          <p class="work-company">ProbablyMonsters</p>
+          <p class="work-title">Executive Producer</p>
+          <p class="work-years">Ire: A Prologue</p>
+        </div>
+        <p class="work-desc">
+          Concept to ship in 9 months on a constrained budget. Taught me exactly which corners you can cut and which ones you can't afford to cut again. <strong>The budget is never the problem. The scope decision is.</strong>
+        </p>
+      </div>
+
+      <div class="work-item">
+        <div class="work-meta">
+          <p class="work-company">ProbablyMonsters</p>
+          <p class="work-title">Studio Head / EP</p>
+          <p class="work-years">2020&ndash;2024</p>
+        </div>
+        <p class="work-desc">
+          Built and led organizations from 10 people to 300-plus. <strong>$250M+ raised.</strong> The portfolio calls on what advances, what pauses, and what dies. Scope without governance kills studios faster than bad ideas do.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <p class="section-label">Let's talk</p>
+    <h2>If you're building toward this, I'd like to hear about it.</h2>
+    <p>I'm exploring what's next: executive and senior production leadership, and building Liminal Production, an early-stage games company oriented around exactly these problems. Either way, the conversation is worth having.</p>
+    <div class="contact-links">
+      <a href="mailto:matt@avenfeld.com" class="btn btn-primary">matt@avenfeld.com</a>
+      <a href="https://linkedin.com/in/avenfeld" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn &nearr;</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Matt Case &mdash; Games &amp; Interactive</span>
+    <span>Kirkland, WA</span>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+  </script>
+
+</body>
+</html>
