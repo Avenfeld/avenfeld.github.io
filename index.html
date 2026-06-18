@@ -13,6 +13,7 @@
       --fg: #1A1A18;
       --muted: #6B6860;
       --accent: #2C4A3E;
+      --highlight: #B85428;
       --rule: #D6D1C4;
       --serif: Georgia, 'Times New Roman', serif;
       --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -164,21 +165,21 @@
       margin-bottom: 2.5rem;
     }
 
-    /* LEAD */
-    .lead h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-      font-weight: 400;
-      line-height: 1.3;
-      margin-bottom: 2rem;
+    /* IP TITLE HIGHLIGHT */
+    .ip {
+      color: var(--highlight);
+      font-weight: 600;
     }
-    .lead p {
-      color: var(--muted);
-      max-width: 640px;
-      margin-bottom: 1.25rem;
-      font-size: 1.05rem;
+    a.ip {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
     }
-    .lead p:last-of-type { margin-bottom: 0; }
+    a.ip:hover {
+      border-bottom-color: var(--highlight);
+    }
+
+    /* PULL QUOTES */
     .pull-quote {
       font-family: var(--serif);
       font-size: 1.25rem;
@@ -196,6 +197,23 @@
       color: var(--muted);
       margin-top: 0.75rem;
     }
+    .pull-quote-sm {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--fg);
+      border-left: 3px solid var(--rule);
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+      line-height: 1.5;
+    }
+    .pull-quote-sm cite {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-style: normal;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
 
     /* WORK */
     .work-grid {
@@ -211,9 +229,7 @@
       border-top: 1px solid var(--rule);
     }
     .work-item:last-child { border-bottom: 1px solid var(--rule); }
-    .work-meta {
-      padding-top: 0.2rem;
-    }
+    .work-meta { padding-top: 0.2rem; }
     .work-company {
       font-size: 0.75rem;
       font-weight: 700;
@@ -242,23 +258,37 @@
       color: var(--fg);
       font-weight: 600;
     }
-    .work-quote {
+
+    /* LEAD */
+    .lead h2 {
       font-family: var(--serif);
-      font-size: 1.05rem;
-      color: var(--fg);
-      border-left: 3px solid var(--accent);
-      padding-left: 1.25rem;
-      margin-top: 1.25rem;
-      line-height: 1.5;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 2rem;
     }
-    .work-quote cite {
-      display: block;
-      font-family: var(--sans);
-      font-size: 0.78rem;
-      font-style: normal;
+    .lead p {
       color: var(--muted);
-      margin-top: 0.5rem;
+      max-width: 640px;
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
     }
+
+    /* THINKING */
+    .thinking h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 2rem;
+    }
+    .thinking p {
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+    .thinking p:last-of-type { margin-bottom: 0; }
 
     /* CONTACT */
     .contact h2 {
@@ -314,6 +344,7 @@
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#lead">Leadership</a></li>
+      <li><a href="#thinking">Thinking</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -343,9 +374,15 @@
           <p class="work-title">Co-Founder / Executive Producer</p>
           <p class="work-years">2000&ndash;2013</p>
         </div>
-        <p class="work-desc">
-          One of the founders of Blindlight, a production company that became the bridge between Hollywood and the games industry. Produced content across <strong>100+ titles including Halo 2 and 3.</strong> Two industries that spoke completely different languages, working in the same room. The job was translation.
-        </p>
+        <div>
+          <p class="work-desc">
+            One of the founders of Blindlight, a Hollywood production services company built at the intersection of entertainment and games. Casting, voice production, motion capture, and marketing assets for 100+ titles, including <span class="ip">Halo 2 &amp; 3</span>, <span class="ip">Splinter Cell: Pandora Tomorrow</span>, <span class="ip">Fable</span>, and <span class="ip">Rise to Honor</span> with Jet Li, who performed his own motion capture and voice work. <strong>The job was getting Hollywood talent to take games seriously, and getting publishers to meet them there.</strong>
+          </p>
+          <blockquote class="pull-quote-sm" style="margin-top: 1.25rem;">
+            "His DNA is still in the place. A passionate focus on interactive media and a dogged pursuit of excellent team results."
+            <cite>Bo Crutcher, Studio Head &mdash; Blindlight</cite>
+          </blockquote>
+        </div>
       </div>
 
       <div class="work-item">
@@ -355,7 +392,7 @@
           <p class="work-years">Destiny franchise</p>
         </div>
         <p class="work-desc">
-          Rebuilt the narrative organization after launch. Led 100+ people across audio, writing, and cinematics through 4 releases. <strong>Metacritic moved from 63 to 86.</strong> A learning machine that got better at pulling players into the story with every year.
+          Rebuilt the narrative organization after launch. Led 100+ people across audio, writing, and cinematics through 4 releases of <span class="ip">Destiny</span>. <strong>Metacritic moved from 63 to 86.</strong> A learning machine that got better at pulling players into the story with every year.
         </p>
       </div>
 
@@ -366,7 +403,7 @@
           <p class="work-years">Westworld Interactive</p>
         </div>
         <p class="work-desc">
-          Translated a nonlinear, morally complex world into an interactive experience. Led a team of 12 at HBO, an IP owner with very high standards and limited patience for anything that didn't meet them. <strong>Emmy-nominated.</strong>
+          Translated a nonlinear, morally complex world into an interactive experience. Led a team of 12 at HBO, an IP owner with very high standards and limited patience for anything that didn't meet them. <strong><a href="https://www.youtube.com/results?search_query=Westworld+A+Delos+Destination+trailer" target="_blank" rel="noopener" class="ip">Westworld: A Delos Destination</a> &mdash; Emmy-nominated.</strong>
         </p>
       </div>
 
@@ -380,8 +417,8 @@
           <p class="work-desc">
             Concept to ship in 9 months on a constrained budget. Taught me exactly which corners you can cut and which ones you can't afford to cut again. <strong>The budget is never the problem. The scope decision is.</strong>
           </p>
-          <blockquote class="work-quote">
-            "Shipping any game is a miracle. Shipping one in a year is something else entirely."
+          <blockquote class="pull-quote-sm" style="margin-top: 1.25rem;">
+            "Shipping any game is a miracle. <a href="https://www.youtube.com/results?search_query=Ire+A+Prologue+trailer" target="_blank" rel="noopener" class="ip">Shipping one in a year</a> is something else entirely."
             <cite>Billy Krolick, Lead Narrative Designer &mdash; Ire: A Prologue</cite>
           </blockquote>
         </div>
@@ -418,9 +455,34 @@
 
     <p>The best production leadership is invisible when it works. The team isn't thinking about the friction or what's still unresolved. They're building.</p>
 
+    <blockquote class="pull-quote-sm">
+      "He pairs a sharp grasp of the business with genuine respect for the creative work, which makes him an empathetic and effective manager. Even when hard calls have to be made, he explains them straight, sets the direction, and trusts his team to get there."
+      <cite>Ben Mullins, Principal Technical Artist &mdash; ProbablyMonsters</cite>
+    </blockquote>
+
     <div class="pull-quote">
       "Matt is not a generic production leader. He is a high-leverage creative executive with rare creative taste, deep industry relationships, and the confidence to challenge weak thinking before it becomes expensive execution."
       <cite>Aaron Nonis, HBO Interactive</cite>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- THINKING -->
+  <section class="thinking" id="thinking">
+    <p class="section-label">What I believe</p>
+    <h2>Games made a promise nobody has cashed yet.</h2>
+
+    <p>Your brain is a story engine. It converts raw experience into meaning, constantly, whether you ask it to or not. That's the mechanism every storyteller has ever tapped into: novels, film, theater. You fill in what's not on the page. The story engine does the work.</p>
+
+    <p>Games promised something different: not just a story to receive, but one to participate in. "As a player, to be an active participant in the story being told." That was the promise. Forty years on, it's still open.</p>
+
+    <p>There are two problems on the path to cashing it. The first is awareness: games that track what you actually do, understand what it meant, and produce meaningfully different outcomes. Players have been asking for persistence more than branching all along. The second is shared agency: characters that hold their own will inside the same space as the player. Nobody has built that yet.</p>
+
+    <p>AI is the first tool that makes both tractable. Almost everyone is pointing it at production efficiency. I'm interested in something harder.</p>
+
+    <div class="pull-quote">
+      What happens when a story can finally talk back?
     </div>
   </section>
 
