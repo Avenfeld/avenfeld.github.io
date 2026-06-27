@@ -327,6 +327,136 @@
       color: var(--muted);
     }
 
+    /* IN DEVELOPMENT */
+    .in-dev-intro {
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .in-dev-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .in-dev-card {
+      border: 1.5px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.75rem;
+      position: relative;
+      background: white;
+    }
+    .in-dev-type {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .in-dev-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
+    .in-dev-status {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .in-dev-locked {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .in-dev-locked::before {
+      content: '⌁';
+      font-style: normal;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+    .in-dev-unlocked { display: none; }
+    .in-dev-unlocked p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0.85rem;
+    }
+    .in-dev-unlocked p:last-child { margin-bottom: 0; }
+    .in-dev-unlocked strong { color: var(--fg); font-weight: 600; }
+    .in-dev-access {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .pw-form { display: flex; gap: 0.5rem; align-items: center; }
+    .pw-input {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      padding: 0.55rem 0.9rem;
+      border: 1.5px solid var(--rule);
+      border-radius: 3px;
+      background: var(--bg);
+      color: var(--fg);
+      width: 160px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .pw-input:focus { border-color: var(--accent); }
+    .pw-input.shake {
+      animation: shake 0.35s ease;
+      border-color: var(--highlight);
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-5px); }
+      40% { transform: translateX(5px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(4px); }
+    }
+    .pw-submit {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.55rem 1rem;
+      background: var(--fg);
+      color: var(--bg);
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .pw-submit:hover { background: var(--accent); }
+    .pw-hint {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .coming-card {
+      border: 1.5px dashed var(--rule);
+      border-radius: 4px;
+      padding: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+    }
+    .coming-label {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
     /* MOBILE */
     @media (max-width: 640px) {
       nav { padding: 1rem 1.5rem; }
@@ -345,6 +475,7 @@
       <li><a href="#work">Work</a></li>
       <li><a href="#lead">Leadership</a></li>
       <li><a href="#thinking">Thinking</a></li>
+      <li><a href="#in-development">In Development</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -464,6 +595,16 @@
       "Matt is not a generic production leader. He is a high-leverage creative executive with rare creative taste, deep industry relationships, and the confidence to challenge weak thinking before it becomes expensive execution."
       <cite>Aaron Nonis, HBO Interactive</cite>
     </div>
+
+    <p class="section-label" style="margin-top: 3.5rem;">How I run production</p>
+
+    <p>The scope decision is the most important production call, and the one most likely to get deferred. Budget overruns, missed deadlines, post-launch regrets: trace most of them backwards and you'll find a scope decision that was made late, made vaguely, or not made at all. Getting there first is most of the job.</p>
+
+    <p>Production clarity and creative clarity have to move together. A team can't execute well against a fuzzy creative brief. And a crisp plan can't survive a team that doesn't know what they're actually building. On every project I've run (from the $250M builds at ProbablyMonsters to shipping <a href="https://www.youtube.com/results?search_query=Ire+A+Prologue+trailer" target="_blank" rel="noopener" class="ip">Ire: A Prologue</a> in nine months on a $6M budget), what went right traces to the same place: the team knew exactly what success looked like before we started executing.</p>
+
+    <p>Metacritic went from 63 to 86 across four Destiny releases at Bungie. That didn't happen by accident. It happened because we narrowed the promise of what each release was, then delivered against it completely. The ambition didn't change. The definition of done got sharper.</p>
+
+    <p>The thing I keep relearning: the teams that ship great work almost always made their hard decisions earlier than the teams that didn't. Scope, story, structure — whatever the core call is, delaying it doesn't make it easier. It just makes it more expensive.</p>
   </section>
 
   <hr class="section-rule" />
@@ -471,6 +612,13 @@
   <!-- THINKING -->
   <section class="thinking" id="thinking">
     <p class="section-label">What I believe</p>
+
+    <p>Before any of this is a games problem, it's a story problem.</p>
+
+    <p>Every large-scale human coordination mechanism (culture, law, money, religion) runs on shared narrative. Story is how humans build models of reality. How belief gets created. How one generation hands the world to the next. The question every entertainment medium is trying to answer is the same: how do you get someone inside the story? Film brought images. Television brought consistency. Games brought agency. The direction has always been the same: more of the audience inside the experience, more of the experience inside the audience.</p>
+
+    <p>Story does something no other format can. It lets someone emotionally experience a truth before they intellectually evaluate it. That's why an idea expressed through story is the most significant thing you can place inside another person's mind. The stories people tell themselves determine what they attempt. The stories cultures tell determine what they build.</p>
+
     <h2>Games made a promise nobody has cashed yet.</h2>
 
     <p>Your brain is a story engine. It converts raw experience into meaning, constantly, whether you ask it to or not. That's the mechanism every storyteller has ever tapped into: novels, film, theater. You fill in what's not on the page. The story engine does the work.</p>
@@ -481,12 +629,67 @@
 
     <p>For the first time in forty years, I think both are actually solvable.</p>
 
+    <p>The games I'm actively working on right now treat runtime as a discipline. Under three hours. Story-first. Built around a specific question: what does it feel like to actually be inside a narrative, not just moving through one?</p>
+
     <div class="pull-quote">
       What happens when a story can finally talk back?
     </div>
+
+    <p class="section-label" style="margin-top: 3.5rem;">A different model</p>
+
+    <p>The games industry has been solving the wrong problem.</p>
+
+    <p>When production costs spiral, the instinct is to add team, extend timeline, expand scope — throw more at it until it breaks differently. The result is studios spending $200M to ship something that should have cost $40M, then wondering why the math doesn't work. The answer most reach for is: do it bigger. That's the wrong direction.</p>
+
+    <p>The audience has already moved. The person who played games in their twenties and doesn't anymore — not because they stopped caring, but because games stopped fitting their life — represents the largest untapped market in entertainment. They're not asking for more. They want less, better. A game that respects their time and earns its ending.</p>
+
+    <p>The economics of a story-first title with a constrained production cycle work in ways that AAA math never can. A lean team. A focused scope. Co-dev infrastructure that compresses cost without compressing craft. A player who pays $30 for something that delivers what no 80-hour open world ever did: the feeling that it was made specifically for them.</p>
+
+    <p>AI changes the arithmetic further. Content pipelines that would have taken months can be accelerated without sacrificing quality. Systems that would have required specialist teams can be built with smaller ones. The question is whether studios use that efficiency to chase bigger and more expensive, or to ship better and faster.</p>
+
+    <p>The work I'm building now bets on the latter.</p>
   </section>
 
   <hr class="section-rule" />
+
+  <hr class="section-rule" />
+
+  <!-- IN DEVELOPMENT -->
+  <section id="in-development" style="padding: 6rem 3rem; max-width: 860px; margin: 0 auto;">
+    <p class="section-label">In Development</p>
+    <p class="in-dev-intro">Some of what I'm building isn't ready to be public. What's here is far enough along to share selectively — a look at where the work is heading. If you'd like access, reach out.</p>
+
+    <div class="in-dev-grid">
+
+      <div class="in-dev-card" id="card-title-1">
+        <p class="in-dev-type">Interactive Narrative &middot; Liminal Production</p>
+        <h3 class="in-dev-title">First Title</h3>
+        <p class="in-dev-status">Early development &middot; Story-first &middot; Under three hours</p>
+        <div class="in-dev-locked" id="locked-1">
+          Details restricted — password required to continue
+        </div>
+        <div class="in-dev-unlocked" id="unlocked-1">
+          <p>The player is a specific person, in a specific moment, making a decision they don't yet understand the weight of. By the end — under three hours — they do.</p>
+          <p>Built around the question the Thinking section sets up: <strong>what does it feel like to actually be inside a narrative, not just moving through one?</strong> The answer requires the game to respond to what the player actually does, not just what they choose from a menu.</p>
+          <p>Systemic storytelling. Constrained scope. $5–10M range. AI-accelerated content pipeline. Production model designed to feel like a $30M title built for a fraction of that.</p>
+          <p style="font-size:0.85rem;color:var(--accent);font-weight:600;">Full brief, prototype plan, and business thesis available on request.</p>
+        </div>
+      </div>
+
+      <div class="coming-card">
+        <span class="coming-label">More in development — coming.</span>
+      </div>
+
+    </div>
+
+    <div class="in-dev-access" id="pw-access">
+      <div class="pw-form">
+        <input type="password" class="pw-input" id="pw-input" placeholder="Enter password" autocomplete="off" />
+        <button class="pw-submit" onclick="checkPassword()">Access</button>
+      </div>
+      <span class="pw-hint">Or <a href="https://linkedin.com/in/avenfeld" target="_blank" rel="noopener" style="color:var(--accent);">reach out on LinkedIn</a> to request access.</span>
+    </div>
+  </section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
@@ -508,6 +711,38 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     });
+
+    // Password gate
+    const PW = btoa('liminal');
+    let unlocked = sessionStorage.getItem('devUnlocked') === '1';
+    if (unlocked) revealAll();
+
+    function checkPassword() {
+      const val = document.getElementById('pw-input').value.trim();
+      if (btoa(val) === PW) {
+        sessionStorage.setItem('devUnlocked', '1');
+        revealAll();
+      } else {
+        const inp = document.getElementById('pw-input');
+        inp.classList.remove('shake');
+        void inp.offsetWidth;
+        inp.classList.add('shake');
+        inp.value = '';
+      }
+    }
+
+    document.getElementById('pw-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+
+    function revealAll() {
+      document.querySelectorAll('[id^="locked-"]').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('[id^="unlocked-"]').forEach(el => {
+        el.style.display = 'block';
+      });
+      const form = document.getElementById('pw-access');
+      if (form) form.style.display = 'none';
+    }
   </script>
 
 </body>
