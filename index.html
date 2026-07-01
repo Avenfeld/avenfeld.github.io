@@ -314,6 +314,33 @@
       font-size: 1.05rem;
     }
 
+    /* PATTERNS */
+    .patterns-grid {
+      margin: 2.5rem 0 3rem;
+    }
+    .pattern-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 2rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .pattern-item:last-child { border-bottom: 1px solid var(--rule); }
+    .pattern-phrase {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--fg);
+    }
+    .pattern-count {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
     /* THINKING */
     .thinking h2 {
       font-family: var(--serif);
@@ -660,6 +687,52 @@
     <p>Metacritic went from 63 to 86 across four Destiny releases at Bungie. That didn't happen by accident. It happened because we narrowed the promise of what each release was, then delivered against it completely. The ambition didn't change. The definition of done got sharper.</p>
 
     <p>The thing I keep relearning: the teams that ship great work almost always made their hard decisions earlier than the teams that didn't. Scope, story, structure — whatever the core call is, delaying it doesn't make it easier. It just makes it more expensive.</p>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- WHAT PEOPLE SAY -->
+  <section id="what-people-say">
+    <p class="section-label">What people say</p>
+    <p style="color: var(--muted); max-width: 560px; font-size: 1.05rem; margin-bottom: 0; line-height: 1.7;">Eleven recommendations. Five organizations. Twenty-five years. A few things keep coming up independently.</p>
+
+    <div class="patterns-grid">
+      <div class="pattern-item">
+        <span class="pattern-phrase">Brings clarity when everything is ambiguous</span>
+        <span class="pattern-count">8 of 11</span>
+      </div>
+      <div class="pattern-item">
+        <span class="pattern-phrase">Holds creative and operational thinking in the same hand</span>
+        <span class="pattern-count">6 of 11</span>
+      </div>
+      <div class="pattern-item">
+        <span class="pattern-phrase">Tells the truth before it gets expensive</span>
+        <span class="pattern-count">5 of 11</span>
+      </div>
+      <div class="pattern-item">
+        <span class="pattern-phrase">Runs interference so the team can build</span>
+        <span class="pattern-count">5 of 11</span>
+      </div>
+      <div class="pattern-item">
+        <span class="pattern-phrase">Leaves organizations stronger than he found them</span>
+        <span class="pattern-count">5 of 11</span>
+      </div>
+    </div>
+
+    <blockquote class="pull-quote-sm">
+      "He calmed me down, broke the issues into bite-sized deliverables and gave me the much needed self-confidence I was lacking at the time. We finished the project on time."
+      <cite>Andrew Helm, Writer &mdash; Blindlight / CMD Group</cite>
+    </blockquote>
+
+    <blockquote class="pull-quote-sm">
+      "He isn't the kind of leader who avoids difficult conversations. If something is off track, he'll point it out directly while also helping find a path forward."
+      <cite>Bridget Danaher, Senior Technical Program Manager &mdash; Mojang Studios</cite>
+    </blockquote>
+
+    <blockquote class="pull-quote-sm">
+      "He cares for his team, defends them against executive level BS, and advocates for top tier outcomes. He's someone you can count on."
+      <cite>Chris Klimecky, Games Industry Executive</cite>
+    </blockquote>
   </section>
 
   <hr class="section-rule" />
