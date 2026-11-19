@@ -327,6 +327,10 @@
       border-top: 1px solid var(--rule);
     }
     .pattern-item:last-child { border-bottom: 1px solid var(--rule); }
+    .pattern-item.paired { flex-direction: column; align-items: stretch; gap: 0.6rem; padding: 1.4rem 0; }
+    .pattern-item.paired .pattern-phrase { font-size: 1.15rem; }
+    .pattern-item.paired .pull-quote-sm { margin: 0; font-size: 0.98rem; color: var(--muted); }
+    .pattern-item.paired .pull-quote-sm cite { color: var(--muted); }
     .pattern-phrase {
       font-family: var(--serif);
       font-size: 1.05rem;
@@ -698,37 +702,42 @@
     <p style="color: var(--muted); max-width: 560px; font-size: 1.05rem; margin-bottom: 0; line-height: 1.7;">Five organizations. Twenty-plus years. A few things keep coming up independently, from people who've worked with me.</p>
 
     <div class="patterns-grid">
-      <div class="pattern-item">
+      <div class="pattern-item paired">
         <span class="pattern-phrase">Brings clarity when everything is ambiguous</span>
+        <blockquote class="pull-quote-sm">
+          &ldquo;He does a great job aligning teams, cutting through ambiguity, and making sure things keep moving forward without losing sight of the big picture.&rdquo;
+          <cite>Chris Shaules, Head of QA &mdash; ProbablyMonsters</cite>
+        </blockquote>
       </div>
-      <div class="pattern-item">
+      <div class="pattern-item paired">
         <span class="pattern-phrase">Holds creative and operational thinking in the same hand</span>
+        <blockquote class="pull-quote-sm">
+          &ldquo;He is exceptional at engaging with both the creative and business sides of making games. Finding that elusive spark that gets the most out of the creatives, without forgetting about the business realities.&rdquo;
+          <cite>Chris Opdahl, General Manager &mdash; Bungie / ProbablyMonsters</cite>
+        </blockquote>
       </div>
-      <div class="pattern-item">
+      <div class="pattern-item paired">
         <span class="pattern-phrase">Tells the truth before it gets expensive</span>
+        <blockquote class="pull-quote-sm">
+          &ldquo;He isn't the kind of leader who avoids difficult conversations. If something is off track, he'll point it out directly while also helping find a path forward.&rdquo;
+          <cite>Bridget Danaher, Senior Technical Program Manager &mdash; Mojang Studios</cite>
+        </blockquote>
       </div>
-      <div class="pattern-item">
+      <div class="pattern-item paired">
         <span class="pattern-phrase">Runs interference so the team can build</span>
+        <blockquote class="pull-quote-sm">
+          &ldquo;He cares for his team, defends them against executive level BS, and advocates for top tier outcomes. He's someone you can count on.&rdquo;
+          <cite>Chris Klimecky, Games Industry Executive</cite>
+        </blockquote>
       </div>
-      <div class="pattern-item">
+      <div class="pattern-item paired">
         <span class="pattern-phrase">Leaves organizations stronger than he found them</span>
+        <blockquote class="pull-quote-sm">
+          &ldquo;Matt sees talent and helps shepherd it forward, enriching whatever project he happens to be leading.&rdquo;
+          <cite>Andrew Helm, Writer &mdash; Blindlight / CMD Group</cite>
+        </blockquote>
       </div>
     </div>
-
-    <blockquote class="pull-quote-sm">
-      "He calmed me down, broke the issues into bite-sized deliverables and gave me the much needed self-confidence I was lacking at the time. We finished the project on time."
-      <cite>Andrew Helm, Writer &mdash; Blindlight / CMD Group</cite>
-    </blockquote>
-
-    <blockquote class="pull-quote-sm">
-      "He isn't the kind of leader who avoids difficult conversations. If something is off track, he'll point it out directly while also helping find a path forward."
-      <cite>Bridget Danaher, Senior Technical Program Manager &mdash; Mojang Studios</cite>
-    </blockquote>
-
-    <blockquote class="pull-quote-sm">
-      "He cares for his team, defends them against executive level BS, and advocates for top tier outcomes. He's someone you can count on."
-      <cite>Chris Klimecky, Games Industry Executive</cite>
-    </blockquote>
   </section>
 
   <hr class="section-rule" />
